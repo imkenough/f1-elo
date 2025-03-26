@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.swp
+*.env
+venv/
+env/
+.python-version
+
+# Database
+*.db
+*.sqlite
+*.db-journal
+
+# FastF1 Cache
+f1_cache/
+
+# IDE & Editor
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS generated
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Temp files
+*.tmp
+*.bak
+
+# Node (if using Vercel)
+node_modules/
