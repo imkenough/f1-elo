@@ -1,7 +1,3 @@
+flask
 fastf1
 pandas
-numpy
-requests
-Flask
-apscheduler
-sqlalchemy
