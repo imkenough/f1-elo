@@ -7,7 +7,7 @@ import sqlite3
 from datetime import datetime
 from typing import Optional
 
-fastf1.Cache.enable_cache('f1_cache')  # Consider adding cache size limit
+fastf1.Cache.disabled()  
 
 class F1EloRating:
     def __init__(self, initial_rating: float = 1500, k_factor: float = 24):
