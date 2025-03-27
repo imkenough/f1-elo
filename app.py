@@ -76,5 +76,15 @@ if __name__ == '__main__':
     logger.info("Starting web server...")
     app.run(debug=True)
 
+from apscheduler.schedulers.background import BackgroundScheduler
+
+def update_elos():
+    from elo_calculator import process_historical_data
+    process_historical_data(start_year=2023)  # Adjust year as needed
+
+scheduler = BackgroundScheduler()
+scheduler.add_job(update_elos, 'cron', day_of_week='mon', hour=10)  # Mondays at 10 AM
+scheduler.start()
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
