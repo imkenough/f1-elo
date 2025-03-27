@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: f1-elo-web
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
+
+cronJobs:
+  - name: update-elo-ratings
+    schedule: "0 10 * * 1" # Every Monday at 10 AM UTC
+    buildCommand: "pip install -r requirements.txt"
+    runCommand: "python elo_calculator.py"
